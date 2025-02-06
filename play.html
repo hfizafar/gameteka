@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossword Puzzle Challenge</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('img/back.webp');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .game-container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 300px;
+            margin-bottom: 30px;
+        }
+
+        .play-button {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 15px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .play-button:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .top-right {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .bottom-icons {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 30px;
+        }
+
+        .bottom-icons img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left">✖</div>
+    <div class="top-right">👤</div>
+    
+    <div class="game-container">
+        <img src="img/logo2.webp" alt="Crossword Puzzle Challenge" class="logo">
+        <button class="play-button">play</button>
+        <button class="play-button">Log out</button>
+    </div>
+    
+    <div class="bottom-icons">
+        <img src="img/hint.webp" alt="Hint">
+        <img src="img/sound.webp" alt="Sound">
+    </div>
+</body>
+</html>

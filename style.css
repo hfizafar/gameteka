@@ -1,0 +1,106 @@
+/* Atur body dengan background gambar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('img/bgg.webp') no-repeat center center fixed; /* Tambahkan background image */
+    background-size: cover; /* Sesuaikan ukuran gambar */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Gaya untuk layar pemuatan */
+.loading-screen {
+    text-align: center;
+    color: #fff; /* Warna teks lebih terang untuk kontras dengan background */
+    position: relative;
+    background: rgba(0, 0, 0, 0.5); /* Transparansi hitam untuk kontras */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Gaya untuk logo gambar */
+.logo-image {
+    width: 350px; /* Sesuaikan ukuran logo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Gaya teks utama */
+.logo h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* Gaya untuk loading bar */
+.loading-bar {
+    width: 300px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: #ff6347;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.loading-text {
+    font-size: 1rem;
+    margin-top: 10px;
+    animation: blink 1s infinite;
+}
+
+/* Animasi untuk teks berkedip */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 290px;
+    height: 25px;
+    border: 2px solid #000;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress {
+    width: 20px;
+    height: 100%;
+    background-color: #000;
+    animation: progressMove 1.5s linear infinite;
+}
+
+@keyframes progressMove {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+

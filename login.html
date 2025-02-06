@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .login-screen {
+            display: flex;
+            align-items: center;
+            background: url('img/back.webp');
+        
+            background-size: cover;
+            width: 100%;
+        }
+
+        .login-screen .left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .login-screen .left img{
+            width: 20vw;
+        }
+        .or {
+    display: flex;
+    align-items: center; /* Sejajarkan secara vertikal */
+    gap: 10px; /* Beri jarak antar elemen */
+    margin: 20px 0;
+}
+
+.or hr {
+    flex: 1; /* Buat garis horizontal meluas */
+    border: none; /* Hapus border default */
+    border-top: 1px solid #fff; /* Atur garis atas */
+}
+
+.or p {
+    margin: 0; /* Hilangkan margin default */
+    padding: 0 10px; /* Beri sedikit ruang di sekitar teks */
+    font-size: 14px; /* Atur ukuran teks */
+    color: #fff; /* Warna teks */
+}
+
+   
+
+        .login-screen .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding:px;
+            background-color: rgb(0, 0, 0);
+            border: #fff;
+            border-width: 1px;
+            border-left-style:solid;
+            /* margin-top: 6vh;
+            margin-bottom: 6vh; */
+            height: 50vh;
+
+        }
+
+        .login-screen .right form {
+            width: 80%;
+            max-width: 300px;
+        }
+
+        .login-screen .right form button  {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #3498db;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-screen .right form .Google{
+            width: 210px;
+            border-radius: 45px;
+        }
+        .login-screen .right form .login{
+            width: 100px;
+            border-radius: 10px;
+            background-color: #93999d;
+        }
+
+        .login-screen .right form button.login:hover {
+            background-color: #93999d;
+        }
+
+        .login-screen .right form button .Google.Google:hover{
+            background-color: #3498db;
+        }
+
+        .login-screen .right form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .login-screen .right p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .login-screen .right .signup-link {
+            color: #3498db;
+            text-decoration: none;
+        }
+        form {
+    width: 300px; /* Lebar formulir */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center elemen di dalam formulir */
+   
+    padding: 20px;
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+.Google, .login {
+    width: 100%; /* Lebar tombol penuh */
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #3498db; /* Warna tombol biru */
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.Google:hover, .login:hover {
+    background-color: #2980b9; /* Warna saat di-hover */
+}
+
+input {
+    width: 100%; /* Lebar input penuh */
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000; /* Warna teks hitam */
+}
+
+.or {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.or hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #fff;
+}
+
+.or p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.signup-link {
+    color: #3498db;
+    text-decoration: none;
+}
+.signup-link:hover {
+    text-decoration: underline;
+}
+    </style>
+  <!-- <script src="script.js"></script> -->
+</head>
+<body>
+    <div class="login-screen">
+        <!-- Left section with background -->
+        <div class="left">
+            <img src="img/logo2.webp" alt="">
+        </div>
+
+
+        <!-- Right section with form -->
+        <div class="right">
+            <form action="#" method="POST">
+                <button type="button" class="Google">Sign in with Google</button>
+                <div class="or">
+                <hr><p>or</p><hr>
+                </div>
+                <input type="text" name="username" placeholder="username" required>
+                <input type="password" name="password" placeholder="password" required>
+                <button type="submit"class="login">LOGIN</button>
+                <p>Belum punya akun? <a href="#" class="signup-link">Daftar</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

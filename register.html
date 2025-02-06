@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .register-screen {
+            display: flex;
+            width: 100%;
+            background: url('img/back.webp');
+            background-size: cover;
+        }
+
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .left h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-container hr {
+            width: 300px;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center ;
+
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 0, 0, 0.278);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            gap: 20px;
+        }
+
+        .form-container input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .form-container button {
+            width: 50%;
+            padding: 10px;
+            background-color: #3498db;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container p {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .form-container .login-link {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .form-container .login-link:hover {
+            text-decoration: underline;
+        }
+
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-left: 2px solid #fff;
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+
+        
+        .register-screen .fa-solid .fa-arrow-left{
+            width:100px;
+            right: 100px;
+            background-color: #3498db;
+        }
+
+    </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <div class="register-screen">
+        <!-- Left section with form -->
+        <i class="fa-solid fa-arrow-left" style="color: #edeff3; font-size: large; background-color: #3498db;"></i>
+        <div class="left">
+            
+         
+            <div class="form-container">
+               
+                <form action="#" method="POST">
+                    <h2>REGISTER</h2>
+                    <hr>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    <button type="submit">Sign Up</button>
+                    <p>Sudah punya akun? <a href="#" class="login-link">Login</a></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right section with logo -->
+        <div class="right">
+            <img src="img/logo2.webp" alt="Crossword Puzzle Challenge">
+        </div>
+    </div>
+</body>
+</html>

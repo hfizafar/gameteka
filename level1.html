@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Selection</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('img/bg3.webp');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            position: relative;
+        }
+
+       
+        
+
+        .level-title {
+            font-size: 50px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .levels {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 100px;
+        }
+
+        .level-button {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #6b6969;
+            color: #fff;
+            font-size: 40px; /* Mengurangi ukuran teks */
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .locked {
+            background: #6b6969;
+            cursor: not-allowed;
+            font-size: 50px; /* Mengecilkan ikon gembok */
+        }
+
+        .top-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-left">⬅</div>
+    
+    <div class="level-container">
+        <div class="level-title">Level</div>
+        <div class="levels">
+            <div class="level-button">1</div>
+            <div class="level-button locked">🔒</div>
+            <div class="level-button locked">🔒</div>
+            <div class="level-button locked">🔒</div>
+            <div class="level-button locked">🔒</div>
+            <div class="level-button locked">🔒</div>
+        </div>
+    </div>
+</body>
+</html>
