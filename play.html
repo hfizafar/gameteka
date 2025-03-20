@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crossword Puzzle Challenge</title>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -12,9 +13,8 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('img/back.webp');
+            background: url('img/back.webp') no-repeat center center fixed;
             background-size: cover;
-            background-position: center;
             color: #fff;
             position: relative;
         }
@@ -34,16 +34,31 @@
         .play-button {
             background: rgba(255, 255, 255, 0.5);
             border: none;
-            padding: 15px 50px;
-            font-size: 24px;
+            padding: 20px 100px;
+            font-size: 32px;
             font-weight: bold;
             cursor: pointer;
             border-radius: 5px;
             text-transform: uppercase;
             color: #fff;
+            margin: 0 auto 10px auto;
         }
 
-        .play-button:hover {
+        .logout-button {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 8px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0 auto;
+        }
+
+        .play-button:hover,
+        .logout-button:hover {
             background: rgba(255, 255, 255, 0.7);
         }
 
@@ -59,8 +74,8 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 24px;
             cursor: pointer;
+            color: white;
         }
 
         .bottom-icons {
@@ -81,22 +96,49 @@
 </head>
 <body>
     <div class="top-left">✖</div>
+
     <a href="login.html">
-    <div class="top-right">👤</div>
+        <span class="iconify top-right" data-icon="pajamas:profile" data-width="40" data-height="40" style="color: white;"></span>
     </a>
+
     <div class="game-container">
         <img src="img/logo2.webp" alt="Crossword Puzzle Challenge" class="logo">
-    <a href="level1.html">
-        <button class="play-button">play</button>
-    </a>
-    
-        <button class="play-button">Log out</button>
+        <a href="level1.html">
+            <button class="play-button">Play</button>
+        </a>
+        <button class="logout-button">Log Out</button>
+    </div>
 
-    </div>
-    
     <div class="bottom-icons">
-        <img src="c:\Users\Lenovo\OneDrive\Documents\img vsc\download.png" >
-        <img src="c:\Users\Lenovo\OneDrive\Documents\suara.png" class="">
+        <a href="info.html">
+            <img src="c:\Users\Lenovo\Downloads\openmoji--mobile-info.png" alt="Info Icon">
+        </a>
+        <img src="img/sound-on.png" alt="Sound Icon" id="soundToggle">
+        <img src="img/sound-off.png" alt="Sound Icon" id="soundToggle">
     </div>
+
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+<script>
+    const music = document.getElementById('backgroundMusic');
+    const soundIcon = document.getElementById('soundToggle');
+
+    let isMuted = false;
+
+    soundIcon.addEventListener('click', () => {
+        if (isMuted) {
+            music.play();
+            soundIcon.src = 'img/sound-on.png/icon-park-solid--voice-message.png';
+        } else {
+            music.pause();
+            soundIcon.src = 'img/souund-off.png/—Pngtree—mute icon_4419502';
+        }
+        isMuted = !isMuted;
+    });
+</script>
 </body>
 </html>

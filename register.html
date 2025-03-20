@@ -42,8 +42,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items:center ;
-
+            align-items: center;
             width: 400px;
             height: 400px;
             background: rgba(0, 0, 0, 0.278);
@@ -72,6 +71,11 @@
             font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-container button:hover {
+            background-color: #2980b9;
         }
 
         .form-container p {
@@ -93,31 +97,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border-left: 2px solid #fff;
             margin-top: 150px;
             margin-bottom: 150px;
         }
 
-        
-        .register-screen .fa-solid .fa-arrow-left{
-            width:100px;
-            right: 100px;
-            background-color: #3498db;
+        .fa-arrow-left {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+         
+         
+            padding: 10px;
+            transition: background-color 0.3s;
         }
 
+        .fa-arrow-left:hover {
+            
+        }
     </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
     <div class="register-screen">
         <!-- Left section with form -->
-        <i class="fa-solid fa-arrow-left" style="color: #edeff3; font-size: large; background-color: #3498db;"></i>
+        <a href="play.html">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
         <div class="left">
-            
-         
             <div class="form-container">
-               
                 <form action="#" method="POST">
                     <h2>REGISTER</h2>
                     <hr>
