@@ -66,6 +66,11 @@
     </style>
 </head>
 <body>
+    <audio id="backgroundMusic" loop autoplay preload="auto">
+        <source src="audio/Different Heaven - Safe & Sound [NCS Release].mp3" type="audio/mpeg">
+    </audio>
+
+    
     <div>
         <a href="play.html">
             <img src="c:\Users\Lenovo\Downloads\material-symbols--arrow-back.png" class="top-left" style="width: 30px; height: auto;"> 
@@ -75,7 +80,9 @@
     <div class="level-container">
         <div class="level-title">Level</div>
         <div class="levels">
+            <a href="soal1.html" class="level-button">
             <div class="level-button">1</div>
+        </a>
             <div class="level-button locked">🔒</div>
             <div class="level-button locked">🔒</div>
             <div class="level-button locked">🔒</div>
@@ -83,5 +90,29 @@
             <div class="level-button locked">🔒</div>
         </div>
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const musik = document.getElementById('backgroundMusic');
+        
+        // Get saved volume state
+        const statusSuara = localStorage.getItem('isMuted') === 'true';
+        const waktuPemutaran = localStorage.getItem('musicTime') || 0;
+        
+        // Apply saved settings
+        musik.volume = statusSuara ? 0 : 0.5;
+        musik.currentTime = parseFloat(waktuPemutaran);
+        
+        // Save playback time periodically
+        setInterval(() => {
+            localStorage.setItem('musicTime', musik.currentTime);
+        }, 1000);
+
+        // Start playback on any user interaction
+        document.addEventListener('click', () => {
+            musik.play();
+        }, { once: true });
+    });
+    </script>
 </body>
 </html>

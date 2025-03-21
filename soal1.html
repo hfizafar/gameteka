@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Teka-Teki Silang</title>
+    <style>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('img/bg3.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 2000px;
+            margin: auto;
+            background: url(/img/bg3.webp);
+            padding: 40px;
+            border-radius: 15px;
+            position: relative;
+        }
+        .top-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 45px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.top-right:hover {
+    transform: scale(1.1);
+}
+
+        .grid-cell {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+        .back {
+            position: absolute;
+            left: 13px;
+            top: 20px;
+            font-size: 50px;
+        }
+        .clue {
+    position: fixed;
+    top: 20px;
+    right: 80px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.clue:hover {
+    transform: scale(1.1);
+}
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 2000px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 15px;
+            position: relative;
+        }
+       .grid {
+    display: grid;
+    grid-template-columns: repeat(9, 40px); /* Reduced from 50px */
+    gap: 2px; /* Reduced from 4px */
+    justify-content: center;
+    position: relative;
+}
+
+.grid input {
+    width: 40px; /* Reduced from 50px */
+    height: 40px; /* Reduced from 50px */
+    text-align: center;
+    font-size: 20px; /* Slightly reduced from 22px */
+    text-transform: uppercase;
+    background: #ffffff;
+    border: 1px solid black; /* Reduced from 2px */
+    color: rgb(0, 0, 0);
+    padding: 0;
+    margin: 0;
+}
+        .grid .blok {
+            width: auto;
+            height: auto;
+            visibility: hidden;
+            background-color: transparent;
+            border: none;
+        }
+
+        .back {
+            position: left;
+            left: 50%;
+            top: 20px;
+            font-size: 50px;
+        }
+        
+        .questions {
+            display: flex;
+            text-align: left;
+            nav-down: 10px;
+            font-size: 26px;
+            margin: 20px 0;
+        }
+         .horizontal {
+         font-size: 18px;
+            left: 200px;
+            position: absolute;
+        }
+
+        .top-left {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.top-left:hover {
+    transform: scale(1.1);
+}
+
+        
+    
+
+        .vertikal{
+            
+            font-size: 18px;
+            right: 10px;
+            position: absolute;
+        }
+        .buttons {
+            margin-top: 270px;
+            display: flex;
+            /* justify-content: space-between; */
+        }
+        .buttons button {
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+      
+        
+        .check {
+            background: red;
+            color: white;
+            position: absolute;
+            left: 200px;
+        }
+        .submit {
+            background: green;
+            color: white;
+            position: absolute;
+            right: 200px;
+        }
+        .number {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    font-size: 10px;
+    color:black;
+    z-index: 1;
+}
+        
+    </style>
+</head>
+<body>
+    <a href="level1.html" class="back">
+        <img src="img/pngegg.png" class="clue" style="width: 55px; height: 55px; position: fixed; top: 10px; z-index: 1000;">
+    </a>
+    
+
+    <div class="container">
+        <a href="level1.html" class="back">
+            <img src="img/pajamas--profile.png" class="top-right" style="width: 40px; height: 40px; position: fixed; top: 20px; ; z-index: 1000;">
+        </a>
+         <h2 class="h3"><b>LEVEL 1</b></h2>
+         <a href="level1.html" class="back">
+            <img src="img/material-symbols--arrow-back.png" class="top-left" style="width: 40px; height: 40px; position: fixed; top: 20px; left: 20px; z-index: 1000;">
+        </a>
+        
+            <div class="grid">
+                <input type="text" maxlength="1" class="blok">
+                <div class="grid-cell">
+                    <span class="number">2</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1">
+                <div class="grid-cell">
+                    <span class="number">9</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1">
+                <div class="grid-cell">
+                    <span class="number">7</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <div class="grid-cell">
+                    <span class="number">1</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <div class="grid-cell">
+                    <span class="number">8</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <div class="grid-cell">
+                    <span class="number">5</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <div class="grid-cell">
+                    <span class="number">6</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <div class="grid-cell">
+                    <span class="number">4</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+                <div class="grid-cell">
+                    <span class="number">3</span>
+                    <input type="text" maxlength="1">
+                </div>                
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+                <div class="grid-cell">
+                    <span class="number">10</span>
+                    <input type="text" maxlength="1">
+                </div>
+                
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1" class="blok">
+                <input type="text" maxlength="1">
+    
+            
+       
+        <div class="questions">
+            <div class="horizontal">
+                <h3>Mendatar</h3>
+                <p>2. Bahan berbuih untuk mandi?<br>
+                4. Perkalian bilangan dengan dirinya sendiri?<br>
+                6. Kata lain dari amnesia?<br>
+                8. Hasil tangkapan nelayan?<br>
+                10. Alat listrik mekanik untuk melumatkan buah?</p>
+            </div>
+            <div class="vertikal">
+                <h3>Menurun</h3>
+                <p>1. Alat untuk membersihkan debu?
+                <br>3. Negara yang pernah dipimpin oleh Fidel Castro?
+                <br>5. Penyakit yang menyebabkan kesulitan bernapas?
+                <br>7. Nama ikan air tawar?
+                <br>9. Kota yang berkembang?</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="check">cek jawaban</button>
+            <button class="submit"><i>kirim</i></button>
+        </div>
+    </div>
+</body>
+</html>

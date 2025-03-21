@@ -85,12 +85,32 @@
             transform: translateX(-50%);
             display: flex;
             gap: 30px;
+            align-items: center;
         }
 
         .bottom-icons img {
             width: 40px;
             height: 40px;
             cursor: pointer;
+        }
+        
+        /* Music button styling */
+        #musicButton {
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 8px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        #musicButton:hover {
+            background: rgba(255, 255, 255, 0.7);
         }
     </style>
 </head>
@@ -106,39 +126,84 @@
         <a href="level1.html">
             <button class="play-button">Play</button>
         </a>
-        <button class="logout-button">Log Out</button>
+        <button class="logout-button" id="logout-button">Log Out</button>
     </div>
 
     <div class="bottom-icons">
         <a href="info.html">
-            <img src="c:\Users\Lenovo\Downloads\openmoji--mobile-info.png" alt="Info Icon">
+            <img src="img/info-icon.png" alt="Info Icon">
         </a>
-        <img src="img/sound-on.png" alt="Sound Icon" id="soundToggle">
-        <img src="img/sound-off.png" alt="Sound Icon" id="soundToggle">
+        
+        <!-- Audio element for background music -->
+        <audio id="bgMusic" loop>
+            <source src="audio/Different Heaven - Safe & Sound [NCS Release].mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <!-- Music toggle button with icon -->
+        <button id="musicButton">
+            <span class="iconify" id="musicIcon" data-icon="mdi:music" data-width="24" data-height="24"></span>
+            Music
+        </button>
     </div>
 
-    <audio id="backgroundMusic" loop autoplay>
-        <source src="audio/background-music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <script>
+        // Background music functionality
+        const bgMusic = document.getElementById('bgMusic');
+        const musicButton = document.getElementById('musicButton');
+        const musicIcon = document.getElementById('musicIcon');
+        
+        // Check if music was playing in previous session
+        window.addEventListener('load', () => {
+            if (sessionStorage.getItem('musicPlaying') === 'true') {
+                bgMusic.play();
+                musicIcon.setAttribute('data-icon', 'mdi:music');
+            } else {
+                musicIcon.setAttribute('data-icon', 'mdi:music-off');
+            }
+        });
+        
+        // Toggle music on button click
+        musicButton.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                sessionStorage.setItem('musicPlaying', 'true');
+                musicIcon.setAttribute('data-icon', 'mdi:music');
+            } else {
+                bgMusic.pause();
+                sessionStorage.setItem('musicPlaying', 'false');
+                musicIcon.setAttribute('data-icon', 'mdi:music-off');
+            }
+        });
+    </script>
 
+    <script type="module">
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
 
-<script>
-    const music = document.getElementById('backgroundMusic');
-    const soundIcon = document.getElementById('soundToggle');
+        const firebaseConfig = {
+            apiKey: "AIzaSyBl6cJoyjKuDjLdOWgcSfNtk1HUHKvkFEs",
+            authDomain: "authfirebase-9c084.firebaseapp.com",
+            projectId: "authfirebase-9c084",
+            storageBucket: "authfirebase-9c084.firebasestorage.app",
+            messagingSenderId: "942052982026",
+            appId: "1:942052982026:web:7e60ee3155366a3bd9cef3"
+        };
 
-    let isMuted = false;
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        let logoutButton = document.getElementById("logout-button");
+        console.log(logoutButton);
 
-    soundIcon.addEventListener('click', () => {
-        if (isMuted) {
-            music.play();
-            soundIcon.src = 'img/sound-on.png/icon-park-solid--voice-message.png';
-        } else {
-            music.pause();
-            soundIcon.src = 'img/souund-off.png/—Pngtree—mute icon_4419502';
-        }
-        isMuted = !isMuted;
-    });
-</script>
+        logoutButton.addEventListener("click", (e) => {
+            const auth = getAuth(app);
+            signOut(auth)
+                .then(() => {
+                    alert("sukses logout");
+                    location.href = 'login.html';
+                })
+                .catch((error) => {});
+        });
+    </script>
 </body>
 </html>
