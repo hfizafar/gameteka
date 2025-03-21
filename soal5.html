@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Teka-Teki Silang</title>
+    <style>
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('img/bg3.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 2000px;
+            margin: auto;
+            background: url(/img/bg3.webp);
+            padding: 40px;
+            border-radius: 15px;
+            position: relative;
+        }
+        .top-right {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            font-size: 45px;
+            cursor: pointer;
+        }
+        
+        .back {
+            position: absolute;
+            left: 13px;
+            top: 20px;
+            font-size: 50px;
+        }
+        .clue {
+            position: absolute;
+            top: 30px;
+            right: 80px;
+            font-size: 40px;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(11, 67px);
+            gap: 0px;
+            justify-content: center;
+            position: relative;
+        }
+        .grid div{
+            position: relative;
+        }
+        .number {
+            position: absolute;
+            font-size: 18px;
+            color: red;
+            top: 2px;  /* Sesuaikan posisi */
+            left: 2px;
+        }
+        .grid input {
+            width: 66px;
+            height: 60px;
+            text-align: center;
+            font-size: 22px;
+            text-transform: uppercase;
+            background: #ffffff;
+            border: 2px solid;
+            color: rgb(0, 0, 0);
+        }
+        .grid .blok{
+            width: 66px;
+            height: 60px;
+            text-align: center;
+            visibility: hidden; 
+            background-color: transparent; 
+            border: none; 
+
+        }
+
+        .questions {
+            display: flex;
+            text-align: left;
+            font-size: 26px;
+            margin: 90px ;
+        }
+         .horizontal {
+            left: 200px;
+            position: absolute;
+        }
+        .vertikal{
+            right: 150px;
+            position: absolute;
+        }
+        .buttons {
+            margin-top: 290px;
+            display: flex;
+            /* justify-content: space-between; */
+        }
+        .buttons button {
+            padding: 20px 40px;
+            border: none;
+            cursor: pointer;
+            font-size: 23px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .check {
+            background: red;
+            color: white;
+            position: absolute;
+            left: 200px;
+        }
+        .submit {
+            background: green;
+            color: white;
+            position: absolute;
+            right: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-right">👤</div>
+         <div class="back">←</div>
+         <h2 class="h3"><b>LEVEL 5</b></h2>
+            <div class="clue">💡</div>
+
+        
+        <div class="grid">
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">2</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">4</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">5</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">6</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">8</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">7</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">9</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">3</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+                <span class="number">9</span>
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            <div>
+                <input type="text" maxlength="1" class="blok">
+            </div>
+            <div>
+                <input type="text" maxlength="1">
+            </div>
+            
+            
+        </div>
+
+        <div class="questions">
+            <div class="horizontal">
+                <h3>Mendatar</h3>
+                <p>1. Zat yang digunakan untuk menyembuhkan penyakit?
+                <br>3. Alat yang digunakan untuk mengambil foto?
+                <br>5. Alat tradisional laut?
+                <br>7. Seni suara yang terjadi dari melodi?
+                <br>9. Hewan pengerat kecil yang sering ditemukan dirumah?</p>
+            </div>
+            <div class="vertikal">
+                <h3>Menurun</h3>
+                <p>2. Alat yng digunakan dalam berbagai jenis olahraga?
+                <br>4. Makanan yang terbuat dari daging yang ditusuk dan dibakar?
+                <br>6. Residu seperti tepung yang tersisa setelah pembakaran suatu zat?
+                <br>8. Karya seni yang dibuat dengan melukis diatas kanva atau kertas?
+                <br>10. Alat yang digunakan untuk membersihkan gigi atau rambut?</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="check">cek jawaban</button>
+            <button class="submit"><i>kirim</i></button>
+        </div>
+    </div>
+</body>
+</html>
